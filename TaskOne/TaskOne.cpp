@@ -2,7 +2,7 @@
 #include "ui_TaskOne.h"
 #include <QTextCursor>
 
-TaskOne::TaskOne(QWidget *parent) :QDialog(parent), ui(new Ui::TaskOne)
+TaskOne::TaskOne(QWidget * parent) :QDialog(parent), ui(new Ui::TaskOne)
 {
     ui->setupUi(this);
     parseText = new TaskOneModel();

@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/rec">
+        <file>images/cpp.ico</file>
+        <file>images/python.ico</file>
+        <file>images/csharp.ico</file>
+        <file>images/java.ico</file>
+        <file>images/javascript.ico</file>
+        <file>images/php.ico</file>
+        <file>images/qt.ico</file>
+    </qresource>
+</RCC>
