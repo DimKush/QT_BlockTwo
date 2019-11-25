@@ -1,7 +1,7 @@
 #include "TaskThree/TaskThree.hpp"
 #include "ui_taskthree.h"
 #include <QtMath>
-TaskThree::TaskThree(QWidget * parent) : QDialog(parent), ui(new Ui::TaskThreeDlg)
+TaskThree::TaskThree(QWidget * parent) : QDialog(parent), ui(new Ui::TaskThreeDlg), countOfRows(0)
 {
     ui->setupUi(this);
     fillFirstInfo();
@@ -25,6 +25,7 @@ void TaskThree::fillFirstInfo()
       for(int j = 0; j < ui->tableWidget->columnCount(); ++j)
       {
           ui->tableWidget->setItem(i,j,(new QTableWidgetItem(QString::number(countOfRows))));
+          countOfRows++;
 
           ui->tableWidget->setItem(i,++j,(new QTableWidgetItem(QString("Computer-" + QString::number(0+rand()%INT_MAX)))));
 
