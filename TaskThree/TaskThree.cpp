@@ -20,12 +20,29 @@ void TaskThree::fillFirstInfo()
     ui->tableWidget->setHorizontalHeaderLabels(QStringList() << "№" << "Имя компьютера" << "IP адрес" << "MAC адрес");
 
     for(int i = 0; i < ui->tableWidget->rowCount(); ++i)
-        {
-           QTableWidgetItem * item = new QTableWidgetItem(
-                       tr("%1 Computer-%2 192.168.1.%2 255.255.255.%3 ").arg(countOfRows).arg(qrand()).arg(qrand()%255).arg(qrand()%255));
-           ui->tableWidget->setItem(i,0,item);
-        }
+    {
 
+      for(int j = 0; j < ui->tableWidget->columnCount(); ++j)
+      {
+          ui->tableWidget->setItem(i,j,(new QTableWidgetItem(QString::number(countOfRows))));
+
+          ui->tableWidget->setItem(i,++j,(new QTableWidgetItem(QString("Computer-" + QString::number(0+rand()%INT_MAX)))));
+
+          ui->tableWidget->setItem(i,++j,(new QTableWidgetItem(QString(
+                               QString::number(0+rand()%CHAR_MAX)) + '.'
+                             + QString::number(0+rand()%CHAR_MAX)  + '.'
+                             + QString::number(0+rand()%CHAR_MAX)  + '.'
+                             + QString::number(0+rand()%CHAR_MAX))));
+
+            ui->tableWidget->setItem(i,++j,(new QTableWidgetItem(QString(
+                               QString::number(0+rand()%CHAR_MAX)) + '.'
+                             + QString::number(0+rand()%CHAR_MAX)  + '.'
+                             + QString::number(0+rand()%CHAR_MAX)  + '.'
+                             + QString::number(0+rand()%CHAR_MAX))));
+      }
+    }
+
+    ui->tableWidget->resizeColumnsToContents();
 }
 
 void TaskThree::on_pushButtonReturn_clicked()
@@ -33,3 +50,10 @@ void TaskThree::on_pushButtonReturn_clicked()
     close();
 }
 
+void TaskThree::on_tableWidget_itemClicked(QTableWidgetItem *item)
+{
+    for(int j = 0; j < ui->tableWidget->columnCount(); ++j)
+    {
+        ui->tableWidget->item(item->row(),j)->setBackground(Qt::red);
+    }
+}

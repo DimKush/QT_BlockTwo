@@ -2,6 +2,7 @@
 #define TASK_THREE_HPP
 
 #include <QDialog>
+#include <QTableWidgetItem>
 
 namespace Ui {
     class TaskThreeDlg;
@@ -17,6 +18,8 @@ public:
 
 private slots:
     void on_pushButtonReturn_clicked();
+
+    void on_tableWidget_itemClicked(QTableWidgetItem *item);
 
 private:
     Ui::TaskThreeDlg *ui;

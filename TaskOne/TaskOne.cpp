@@ -9,7 +9,6 @@ TaskOne::TaskOne(QWidget * parent) :QDialog(parent), ui(new Ui::TaskOne)
 
     if (!parseText)
         close();
-
 }
 
 TaskOne::~TaskOne()
@@ -35,6 +34,4 @@ void TaskOne::on_plainTextEdit_textChanged()
         ui->plainTextEdit->setPlainText(parseText->getText());
         ui->plainTextEdit->setTextCursor(tmpCursor);
     }
-
-
 }

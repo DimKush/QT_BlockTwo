@@ -47,8 +47,6 @@ bool TaskOneModel::change(QString istr)
 
            ChangeOnSymbol(exampl);
 
-           qDebug() << "exampl = " << exampl;
-
            preText += exampl;
            pos = r + 1;
            chg = true;
@@ -59,7 +57,6 @@ bool TaskOneModel::change(QString istr)
 
     return chg;
 }
-
 
 void TaskOneModel::ChangeOnSymbol(QString & str)
 {
@@ -72,7 +69,6 @@ void TaskOneModel::ChangeOnSymbol(QString & str)
     else if(str.compare("EUR") == 0 || str.compare("евро") == 0)
         str = "€";
 }
-
 
 QString TaskOneModel::getText()
 {
