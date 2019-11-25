@@ -21,26 +21,22 @@ void TaskThree::fillFirstInfo()
 
     for(int i = 0; i < ui->tableWidget->rowCount(); ++i)
     {
+      ui->tableWidget->setItem(i,0,(new QTableWidgetItem(QString::number(countOfRows))));
+      countOfRows++;
 
-      for(int j = 0; j < ui->tableWidget->columnCount(); ++j)
-      {
-          ui->tableWidget->setItem(i,j,(new QTableWidgetItem(QString::number(countOfRows))));
-          countOfRows++;
+      ui->tableWidget->setItem(i,1,(new QTableWidgetItem(QString("Computer-" + QString::number(0+rand()%INT_MAX)))));
 
-          ui->tableWidget->setItem(i,++j,(new QTableWidgetItem(QString("Computer-" + QString::number(0+rand()%INT_MAX)))));
+      ui->tableWidget->setItem(i,2,(new QTableWidgetItem(QString(
+                           QString::number(0+rand()%CHAR_MAX)) + '.'
+                         + QString::number(0+rand()%CHAR_MAX)  + '.'
+                         + QString::number(0+rand()%CHAR_MAX)  + '.'
+                         + QString::number(0+rand()%CHAR_MAX))));
 
-          ui->tableWidget->setItem(i,++j,(new QTableWidgetItem(QString(
-                               QString::number(0+rand()%CHAR_MAX)) + '.'
-                             + QString::number(0+rand()%CHAR_MAX)  + '.'
-                             + QString::number(0+rand()%CHAR_MAX)  + '.'
-                             + QString::number(0+rand()%CHAR_MAX))));
-
-            ui->tableWidget->setItem(i,++j,(new QTableWidgetItem(QString(
-                               QString::number(0+rand()%CHAR_MAX)) + '.'
-                             + QString::number(0+rand()%CHAR_MAX)  + '.'
-                             + QString::number(0+rand()%CHAR_MAX)  + '.'
-                             + QString::number(0+rand()%CHAR_MAX))));
-      }
+        ui->tableWidget->setItem(i,3,(new QTableWidgetItem(QString(
+                           QString::number(0+rand()%CHAR_MAX)) + '.'
+                         + QString::number(0+rand()%CHAR_MAX)  + '.'
+                         + QString::number(0+rand()%CHAR_MAX)  + '.'
+                         + QString::number(0+rand()%CHAR_MAX))));
     }
 
     ui->tableWidget->resizeColumnsToContents();
